@@ -17,6 +17,6 @@ class DefaultController extends AbstractController {
     {
         $var = "test";
 
-       return $this->render('base.html.twig', ['var' => $var]);
+       return $this->render('index.html.twig', ['var' => $var]);
     }
 }

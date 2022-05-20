@@ -1,3 +1,18 @@
+:root {
+    --bs-warning-rgb: 208, 235, 255;
+    --bs-warning: rgb(var(--bs-warning-rgb));
+    --bs-black-rgb: 134, 142, 150;
+    --bs-black: rgb(var(--bs-black-rgb));
+}
+
 body {
-    background-color: lightgray;
+    background-color: white;
+}
+
+h1 {
+    font-family: Alef, serif;
+}
+
+.navbar {
+    background-color: var(--bs-warning-rgb);
 }
