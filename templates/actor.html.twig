@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+    {% block body %}
+        <strong>Acteurs :</strong>
+        <ul>
+            {% for actor in program.actors %}
+                <li>{{ actor.firstname }}</li>
+            {% else %}
+                <li>Aucun acteur pour cette série</li>
+            {% endfor %}
+        </ul>
+    {% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+    {% block body %}
+        <!-- TODO make a real sign up -->
+        <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header p-5 pb-4 border-bottom-0">
+                        <h2 class="fw-bold mb-0">Sign up for free</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body p-5 pt-0">
+                        <form class="" action="{{ path('app_login') }}" method="post">
+                            <div class="form-floating mb-3">
+                                <div>
+                                    <label for="username">Email address</label>
+                                </div>
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="name@example.com">
+                            </div>
+                            <div class="form-floating mb-3">
+                                <div>
+                                    <label for="password">Password</label>
+                                </div>
+                                <input type="password" id="password" name="_password" placeholder="Password">
+                            </div>
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
+                            <small class="text-muted">Click to</small>
+                            <a href="{{ path('app_register') }}"> Register</a>
+                            {% if error %}
+                                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+                            <hr class="my-4">
+                            <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                            <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
+                                <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"></use></svg>
+                                Sign up with Twitter
+                            </button>
+                            <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+                                <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"></use></svg>
+                                Sign up with Facebook
+                            </button>
+                            <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                                <svg class="bi me-1" width="16" height="16"><use xlink:href="#github"></use></svg>
+                                Sign up with GitHub
+                            </button>
+                            <input type="hidden" name="_target_path" value="{{ path('app_category_index') }}"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}
+

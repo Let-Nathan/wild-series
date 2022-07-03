@@ -1,26 +1,21 @@
 {% extends "base.html.twig" %}
 {% block body %}
-    <div class="row">
-        <div class="d-flex flex-column align-items-center">
-            <p class="h1">Bienvenue</p>
-            <div class="container-fluid col-5 mt-4">
-                <img class="img-fluid rounded" src="https://www.e-marketing.fr/Assets/Img/BREVE/2019/10/341856/newsletter-revient-gout-jour-F.jpg">
-            </div>
-            <div class=" col-9 mt-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce feugiat, tortor sit amet tincidunt pulvinar, quam lectus mattis augue, quis finibus mauris lectus ut ligula. Nam sit amet diam ac libero suscipit accumsan consequat non dolor. Nulla iaculis et turpis eu faucibus. Suspendisse potenti. Etiam vestibulum facilisis libero in dapibus. Integer aliquet nisl eu arcu fringilla, id sollicitudin lectus dictum. Phasellus semper lectus non eleifend mollis. Cras at sollicitudin tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ac sollicitudin sapien.</p>
-            </div>
-        </div>
-        <div class="mt-5 d-flex justify-content-center">
-            <div class="mt-8 col-8">
-                <form method="post" class="">
-                    <label for="test"></label>
-                    <textarea id="test" name="test" class="form-control"></textarea>
+        <div class="mt-5">
+            <div class="container">
+                <form method="GET" class="d-flex flex-column align-items-center row-cols-4">
+                    <label for="category"></label>
+                    <select name="category" id="category">
+                        <option value="">Select a film category</option>
+                        {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="row-cols-4 d-flex justify-content-end">
+                        <button type="submit" class="btn bg-warning mt-1">Submit</button>
+                    </div>
                 </form>
-                <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn bg-warning mt-1">Submit</button>
-                </div>
-            </div>
 
+            </div>
         </div>
-    </div>
+
 {% endblock %}

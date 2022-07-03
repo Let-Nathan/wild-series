@@ -1,0 +1,16 @@
+ {% if is_granted('ROLE_CONTRIBUTOR') %}
+     {% if not commentType.isRendered() %}
+        {{ form_start(commentType)}}
+        <div class="w-75 bg-white">
+            <div class="d-flex align-items-center flex-column ">
+
+                <div class="col-12"> {{ form_row(commentType.comment) }} </div>
+
+            <div class="d-flex justify-content-center">
+                <input class="btn btn-primary" type="submit">
+            </div>
+        </div>
+             {{ form_end(commentType) }}
+     {% endif %}
+     </div>
+ {% endif %}

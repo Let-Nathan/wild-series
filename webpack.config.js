@@ -59,8 +59,9 @@ Encore
         config.corejs = 3;
     })
 
+
     // enables Sass/SCSS support
-    //.enableSassLoader()
+    .enableSassLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -76,4 +77,16 @@ Encore
     //.autoProvidejQuery()
 ;
 
-module.exports = Encore.getWebpackConfig();
+    // et remplace par ceci
+    const fullConfig = Encore.getWebpackConfig();
+    fullConfig.devServer = {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+            'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+        },
+        watchFiles: {
+            paths: ['templates/**/*.html.twig'],
+        },
+    };
+    module.exports = fullConfig;

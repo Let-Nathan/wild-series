@@ -1,0 +1,11 @@
+{% block flashMessages %}
+    {%for category, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="hstack justify-content-center">
+                    <div class="alert {{ category }} col-4 d-flex justify-content-center">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+    {% endfor %}
+{% endblock %}

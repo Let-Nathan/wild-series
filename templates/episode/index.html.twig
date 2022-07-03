@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+    {% block body %}
+        <div class="container">
+            <div class="d-flex flex-row row-cols-4 justify-content-around">
+                {% for key, episode in episodes %}
+                    <div class="flex-row mb-5 mt-2 d-flex">
+                        <div class="card m-5">
+                            <p class="h4 d-flex justify-content-center"> {{ episode.title }} {{ episode.number}} </p>
+                            <img src="{{ episode.images }}" class="img-fluid img-bg">
+                            <p class="h6"> {{ episode.synopsis }} </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}
+

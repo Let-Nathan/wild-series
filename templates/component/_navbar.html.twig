@@ -1,0 +1,17 @@
+{% block navbar %}
+    <nav class="navbar navbar-expand-lg bg-black mb-5 ">
+        <div class="container-fluid ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                {% if app.user %}
+                    {{ app.user.email }}
+                    <a href="{{ path('app_login') }}"> Se déconnecter</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}"> Se connecter</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+{% endblock %}
